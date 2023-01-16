@@ -1,4 +1,19 @@
 body {
+    margin: 0 auto;
     background: thistle;
     text-align: center;
+    }
+
+.container {
+    width: 360px;
+}
+
+#inputField{
+    width: 325px;
+    height: 30px;
+    border: 1px solid black;
+    outline: none;
+    font-size: 25px;
+    vertical-align: middle;
+
 }
