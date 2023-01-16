@@ -1,7 +1,9 @@
 body {
     margin: 0 auto;
+    width: 50%;
     background: thistle;
-    text-align: center;
+    text-align: middle;
+    font-family: sans-serif;
     }
 
 .container {
@@ -9,11 +11,28 @@ body {
 }
 
 #inputField{
-    width: 325px;
+    width: 315px;
     height: 30px;
     border: 1px solid black;
     outline: none;
     font-size: 25px;
     vertical-align: middle;
+}
 
+#enter {
+    width: 30px;
+    height: 32px;
+    border: 1px solid black;
+    outline: none;
+    font-size: 25px;
+    vertical-align: middle;
+}
+.to-dos{
+    margin-top: 25px;
+}
+
+.paraghraph-styling{
+    margin: 0;
+    cursor: pointer;
+    font-size: 25px;
 }
