@@ -13,4 +13,8 @@ enterButton.addEventListener("click", function () {
   paragraph.addEventListener("click", function () {
     paragraph.style.textDecoration = "line-through"; //one click draws line through
   });
+
+  paragraph.addEventListener("dblclick", (event) => {
+    toDoContainer.removeChild(paragraph); // double click deletes list element
+  });
 });
