@@ -5,9 +5,12 @@ let toDoContainer = document.getElementById("toDoContainer");
 
 // event listeners
 enterButton.addEventListener("click", function () {
-  let paraghraph = document.createElement("p");
-  paraghraph.classList.add('paragraph-styling') //text size
-  paraghraph.innerText = inputField.value; //search text
-  toDoContainer.appendChild(paraghraph);
-  inputField.value = "" //empties search bar
+  let paragraph = document.createElement("p");
+  toDoContainer.appendChild(paragraph); // makes text from input field
+  paragraph.innerText = inputField.value; //search text
+  inputField.value = ""; //empties search bar
+
+  paragraph.addEventListener("click", function () {
+    paragraph.style.textDecoration = "line-through"; //one click draws line through
+  });
 });
