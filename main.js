@@ -1,20 +1,37 @@
 //variables
-let enterButton = document.getElementById("enter");
-let inputField = document.getElementById("inputField");
-let toDoContainer = document.getElementById("toDoContainer");
+let task = document.getElementById("inputTask");
+let newList = document.getElementById("newList");
+let submitButton = document.getElementById("submit");
 
-// event listeners
-enterButton.addEventListener("click", function () {
-  let paragraph = document.createElement("p");
-  toDoContainer.appendChild(paragraph); // makes text from input field
-  paragraph.innerText = inputField.value; //search text
-  inputField.value = ""; //empties search bar
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
 
-  paragraph.addEventListener("click", function () {
-    paragraph.style.textDecoration = "line-through"; //one click draws line through
-  });
+  let task = document.getElementById("inputTask").value;
+  let start = document.getElementById("inputStartDate").value;
+  let completed = document.getElementById("inputCompletionDate").value;
 
-  paragraph.addEventListener("dblclick", (event) => {
-    toDoContainer.removeChild(paragraph); // double click deletes list element
-  });
+  let listContainer = document.getElementById("listContainer");
+
+  let todoRow = document.createElement("div");
+  todoRow.setAttribute("class","rowContainer")
+  
+  listContainer.appendChild(todoRow);
+
+  console.log(listContainer)
+  let taskRow = document.createElement("p");
+  let startCell = document.createElement("p");
+  let completedCell = document.createElement("p");
+
+  let checkButton = document.createElement("button")//button is named checkButton
+  let startButton = document.createElement("button")
+// innerText will always be a string
+  taskRow.innerText = task;
+  startCell.innerText = start;
+  completedCell.innerText = completed;
+ // add buttons
+
+  todoRow.appendChild(taskRow)//task cell
+  todoRow.appendChild(startCell)//start cell
+  todoRow.appendChild(completedCell);// complete cell
+
 });
