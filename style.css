@@ -1,15 +1,17 @@
+#title{
+    display: flex;
+    text-align: center;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
-    width: 50%;
     background: thistle;
-    text-align: middle;
     font-family: sans-serif;
     font-size: 30px;
     }
-
-.container {
-    width: 360px;
-}
 
 #inputField{
     width:200px;
@@ -38,16 +40,41 @@ body {
     font-size: 10px;
 }
 
-.table th{
-    font-size: 15px;
-    color: black;
+#tableBody tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-color: black;
+    border-width: 1px;
+    padding-left: 10px;
 }
 
-.table td input{
-    width: 200px;
-    height: 50px;
-    font-size: 20px;
-    border: none;
-    outline: none;
-    text-align: left;
+#inputContainer {
+    display: flex;
+    flex-direction: row;
+    /* justify-content:space-between; */
+}
+
+#listContainer{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+.rowContainer {
+    display: flex; 
+    flex-direction: row;
+    border-width: 2px;
+}
+
+.rowContainer h3 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rowContainer p {
+    padding-left: 10px;
+    padding-right: 10px;
 }
