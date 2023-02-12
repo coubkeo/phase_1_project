@@ -17,7 +17,6 @@ submitButton.addEventListener("click", (e) => {
 
   listContainer.appendChild(todoRow);
 
-  console.log(listContainer);
   let taskRow = document.createElement("p");
   let startCell = document.createElement("p");
   let completedCell = document.createElement("p");
@@ -58,4 +57,21 @@ submitButton.addEventListener("click", (e) => {
   todoRow.addEventListener("mouseout", () => {
     event.target.style.color = "black";
   });
+
+  //delete tasks
+  todoRow.addEventListener("dblclick", () =>{
+    todoRow.removeChild(taskRow)
+  })
+  todoRow.addEventListener("dblclick", () =>{
+    todoRow.removeChild(startCell)
+  })
+  todoRow.addEventListener("dblclick", () =>{
+    todoRow.removeChild(completedCell)
+  })
+  todoRow.addEventListener("dblclick", () =>{
+    todoRow.removeChild(startButton)
+  })
+  todoRow.addEventListener("dblclick", () =>{
+    todoRow.removeChild(checkButton)
+  })
 });
