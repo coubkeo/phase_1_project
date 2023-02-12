@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css">
     <title>To Do List</title>
   </head>
   <body>
-    <h1>To Do List</h1>
-    <div class="container">
-        <input id = "inputField" type = "text" placeholder="New Item...">
-        <button id = "enter">+</button>
-        <div class = "to-dos" id = "toDoContainer">
-        </div>
+    <h1 id="title">To Do List</h1>
+    <form id = "new-to-do-list">
+      <div class = "newList">
+
+          <div id="inputContainer">
+              <input id = "inputTask" type="text" placeholder="New Task...">
+              <input id = "inputStartDate" type="text" placeholder="Start Date">
+              <input id="inputCompletionDate" type="text" placeholder="Completed Date">
+              <button id="submit">+</button>
+          </div>
+      
+          <table class="toDoTable">
+          </div>
+        </form>
+        <ul id="listContainer">
+          <div class="rowContainer">
+            <h3>Task</h3>
+            <h3>Start</h3>
+           <h3>Completed</h3>
+          </div>
+        </ul>
+        <tbody id="tableBody">
+
+        </tbody>
+      </table>
     <script src="main.js"></script>
   </body>
 </html>
