@@ -13,25 +13,49 @@ submitButton.addEventListener("click", (e) => {
   let listContainer = document.getElementById("listContainer");
 
   let todoRow = document.createElement("div");
-  todoRow.setAttribute("class","rowContainer")
-  
+  todoRow.setAttribute("class", "rowContainer");
+
   listContainer.appendChild(todoRow);
 
-  console.log(listContainer)
+  console.log(listContainer);
   let taskRow = document.createElement("p");
   let startCell = document.createElement("p");
   let completedCell = document.createElement("p");
 
-  let checkButton = document.createElement("button")//button is named checkButton
-  let startButton = document.createElement("button")
-// innerText will always be a string
+  let checkButton = document.createElement("button"); //button is named checkButton
+  let startButton = document.createElement("button");
+  // innerText will always be a string
   taskRow.innerText = task;
   startCell.innerText = start;
   completedCell.innerText = completed;
- // add buttons
+  // add buttons
+  checkButton.innerText = "✔️";
+  startButton.innerText = "🗓️";
 
-  todoRow.appendChild(taskRow)//task cell
-  todoRow.appendChild(startCell)//start cell
-  todoRow.appendChild(completedCell);// complete cell
+  todoRow.appendChild(taskRow); //task cell
+  todoRow.appendChild(startCell); //start cell
+  todoRow.appendChild(completedCell); // complete cell
 
+  todoRow.appendChild(checkButton);
+  todoRow.appendChild(startButton);
+
+  //cross-out list
+  todoRow.addEventListener("click", () => {
+    taskRow.style.textDecoration = "line-through";
+  });
+  todoRow.addEventListener("click", () => {
+    startCell.style.textDecoration = "line-through";
+  });
+  todoRow.addEventListener("click", () => {
+    completedCell.style.textDecoration = "line-through";
+  });
+
+  //highlight when hovered
+  todoRow.addEventListener("mouseover", () => {
+    event.target.style.color = "green";
+  });
+  //unhighlight when not hovered
+  todoRow.addEventListener("mouseout", () => {
+    event.target.style.color = "black";
+  });
 });
