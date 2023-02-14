@@ -13,46 +13,22 @@ body {
     font-size: 30px;
     }
 
-#inputField{
-    width:200px;
-    height: 50px;
-    border: 1px solid black;
-    outline: none;
-    font-size: 20px;
-    vertical-align: middle;
-}
-
-#enter {
-    width: 50px;
-    height: 45px;
-    border: 1px solid black;
-    outline: none;
-    font-size: 25px;
-    vertical-align: middle;
-}
-.to-dos{
-    margin-top: 25px;
-}
-
-.paraghraph-styling{
-    margin: 0;
-    cursor: pointer;
-    font-size: 10px;
-}
-
 #tableBody tr {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     border-color: black;
     border-width: 1px;
     padding-left: 10px;
-}
+    font-size: 20px;
+    text-align: center;
+    word-wrap: break-word;
+    }
 
 #inputContainer {
     display: flex;
     flex-direction: row;
-    /* justify-content:space-between; */
+    align-self: center;
+    justify-content:center;
+    padding-top: 15px;
 }
 
 #listContainer{
@@ -61,12 +37,14 @@ body {
     flex-direction: column;
     align-items: center;
     list-style: none;
-}
+    }
 
 .rowContainer {
     display: flex; 
     flex-direction: row;
     border-width: 2px;
+    font-size: 20px;
+    align-items: center;
 }
 
 .rowContainer h3 {
@@ -77,4 +55,15 @@ body {
 .rowContainer p {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.rowButton{
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+}
+
+#postit{
+    height: 100px;
+    width: 100px;
 }
