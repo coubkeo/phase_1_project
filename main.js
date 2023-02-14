@@ -3,75 +3,99 @@ let task = document.getElementById("inputTask");
 let newList = document.getElementById("newList");
 let submitButton = document.getElementById("submit");
 
+fetch("http://localhost:3000/todo")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (firstTasks) {
+    let listContainer = document.getElementById("listContainer");
+    firstTasks.forEach((item) => {
+      let todoRow = document.createElement("div");
+      todoRow.setAttribute("class", "rowContainer");
+
+      listContainer.appendChild(todoRow);
+      let taskCell = document.createElement("p");
+      let startCell = document.createElement("p");
+      let completedCell = document.createElement("p");
+
+      taskCell.innerText = item.activity;
+      startCell.innerText = item.start;
+      completedCell.innerText = item.completed;
+
+      todoRow.appendChild(taskCell);
+      todoRow.appendChild(startCell);
+      todoRow.appendChild(completedCell);
+    });
+  });
+
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
 
   let task = document.getElementById("inputTask").value;
-  let start = document.getElementById("inputStartDate").value;
-  let completed = document.getElementById("inputCompletionDate").value;
 
-  let listContainer = document.getElementById("listContainer");
+  let listContainer = document.getElementById("listContainer");//parent
 
-  let todoRow = document.createElement("div");
-  todoRow.setAttribute("class", "rowContainer");
+  let todoRow = document.createElement("div");//child
+  todoRow.setAttribute("class", "rowContainer"); //adding a class w/o putting in html
 
-  listContainer.appendChild(todoRow);
+  listContainer.appendChild(todoRow);//add to list
 
-  let taskRow = document.createElement("p");
+  let taskCell = document.createElement("p");
   let startCell = document.createElement("p");
   let completedCell = document.createElement("p");
 
+  //add buttons
   let checkButton = document.createElement("button"); //button is named checkButton
   let startButton = document.createElement("button");
-  // innerText will always be a string
-  taskRow.innerText = task;
-  startCell.innerText = start;
-  completedCell.innerText = completed;
-  // add buttons
-  checkButton.innerText = "✔️";
-  startButton.innerText = "🗓️";
 
-  todoRow.appendChild(taskRow); //task cell
+  // innerText will always be a string
+  taskCell.innerText = task;
+  startButton.innerText = "📅";
+  checkButton.innerText = "✔️";
+
+  startButton.setAttribute("class", "rowButton");
+  checkButton.setAttribute("class", "rowButton");
+
+  todoRow.appendChild(taskCell); //task cell
   todoRow.appendChild(startCell); //start cell
   todoRow.appendChild(completedCell); // complete cell
 
-  todoRow.appendChild(checkButton);
   todoRow.appendChild(startButton);
+  todoRow.appendChild(checkButton);
 
   //cross-out list
-  todoRow.addEventListener("click", () => {
-    taskRow.style.textDecoration = "line-through";
+  checkButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const startDate = new Date();
+    completedCell.innerText = startDate.toLocaleDateString();
+    taskCell.style.textDecoration = "line-through";
   });
-  todoRow.addEventListener("click", () => {
-    startCell.style.textDecoration = "line-through";
-  });
-  todoRow.addEventListener("click", () => {
-    completedCell.style.textDecoration = "line-through";
+
+  startButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const startDate = new Date();
+    startCell.innerText = startDate.toLocaleDateString();
   });
 
   //highlight when hovered
   todoRow.addEventListener("mouseover", () => {
-    event.target.style.color = "green";
+    taskCell.style.color = "green";
+    startCell.style.color = "green";
+    completedCell.style.color = "green";
   });
   //unhighlight when not hovered
   todoRow.addEventListener("mouseout", () => {
-    event.target.style.color = "black";
+    taskCell.style.color = "black";
+    startCell.style.color = "black";
+    completedCell.style.color = "black";
   });
 
   //delete tasks
-  todoRow.addEventListener("dblclick", () =>{
-    todoRow.removeChild(taskRow)
-  })
-  todoRow.addEventListener("dblclick", () =>{
-    todoRow.removeChild(startCell)
-  })
-  todoRow.addEventListener("dblclick", () =>{
-    todoRow.removeChild(completedCell)
-  })
-  todoRow.addEventListener("dblclick", () =>{
-    todoRow.removeChild(startButton)
-  })
-  todoRow.addEventListener("dblclick", () =>{
-    todoRow.removeChild(checkButton)
-  })
+  todoRow.addEventListener("dblclick", () => {
+    todoRow.removeChild(taskCell);
+    todoRow.removeChild(startCell);
+    todoRow.removeChild(completedCell);
+    todoRow.removeChild(startButton);
+    todoRow.removeChild(checkButton);
+  });
 });
