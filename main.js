@@ -33,16 +33,18 @@ submitButton.addEventListener("click", (e) => {
 
   let task = document.getElementById("inputTask").value;
 
-  let listContainer = document.getElementById("listContainer");//parent
+  let listContainer = document.getElementById("listContainer"); //parent
 
-  let todoRow = document.createElement("div");//child
+  let todoRow = document.createElement("div"); //child
   todoRow.setAttribute("class", "rowContainer"); //adding a class w/o putting in html
 
-  listContainer.appendChild(todoRow);//add to list
+  listContainer.appendChild(todoRow); //add to list
 
   let taskCell = document.createElement("p");
   let startCell = document.createElement("p");
   let completedCell = document.createElement("p");
+
+  inputTask.value = "";
 
   //add buttons
   let checkButton = document.createElement("button"); //button is named checkButton
