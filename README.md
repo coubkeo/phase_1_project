@@ -1,4 +1,4 @@
-#To DO
+#To Do
 
  This To Do app was created to keep track of tasks and important dates.
 
