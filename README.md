@@ -11,6 +11,8 @@ Features
    - The input box allows the user to add their own personalized tasks and goals.
    - The calander button adds the date the task is started 
    - The check mark button adds the date the task was completed and crosses out the task.
+   - The user is able to hover over the task to better manage the list.
+   - To delete a task the user can double click on the task.
 
  The list helps visualize the priority of each task and the dates help track the amount of time each task takes to complete. Seeing these elements can help with completing more tasks and assist in time management skills.
 
