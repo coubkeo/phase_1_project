@@ -6,6 +6,8 @@
 
 Features
 
+<img src ="https://github.com/coubkeo/phase_1_project/blob/main/ToDoScreenshot.jpg" width ="400">
+
    - The input box allows the user to add their own personalized tasks and goals.
    - The calander button adds the date the task is started 
    - The check mark button adds the date the task was completed and crosses out the task.
